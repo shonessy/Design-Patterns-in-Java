@@ -1,5 +1,6 @@
+import java.util.Iterator;
 
-public class DinerMenu {
+public class DinerMenu implements Menu {
 	private MenuItem[] menuItems;
 	private static final int MAX_ITEMS = 6;
 	private int numberOfItems = 0;
@@ -10,10 +11,10 @@ public class DinerMenu {
 		this.addMenuItem("Vegetrijanska corba", "Grasak, Buranija, Sargarepa", true, 2.85);
 		this.addMenuItem("Cevapi", "Telece meco", false, 3.50);
 		this.addMenuItem("Spagete", "Spagete, Milaneze sos", true, 4.20);
-		this.addMenuItem("Musaka", "Krompir, mleveno junece meco", false, 4.70);
+		this.addMenuItem("MusaKKa", "Krompir, mleveno junece meco", false, 4.70);
 	}
 	
-	private void addMenuItem(String name, String desription, boolean vegeterian, double price){
+	public void addMenuItem(String name, String desription, boolean vegeterian, double price){
 		MenuItem item = new MenuItem(name, desription, vegeterian, price);
 		if(this.numberOfItems >= MAX_ITEMS)
 			System.out.println("You excited max menu size of " + MAX_ITEMS);
